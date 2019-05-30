@@ -1,3 +1,4 @@
-com/wildcodeschool/myProjectWithDB/controllers/SchoolController$School.class
+com/wildcodeschool/myProjectWithDB/entities/School.class
+com/wildcodeschool/myProjectWithDB/repositories/SchoolRepository.class
 com/wildcodeschool/myProjectWithDB/controllers/SchoolController.class
 com/wildcodeschool/myProjectWithDB/QuestSpring02Application.class
