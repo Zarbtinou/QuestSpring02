@@ -12,8 +12,8 @@ import com.wildcodeschool.myProjectWithDB.entities.School;
 public class SchoolRepository {
 
     private final static String DB_URL = "jdbc:mysql://localhost:3306/wild_db_quest?serverTimezone=GMT";
-    private final static String DB_USER = "___";//Replace ___ by ur user
-    private final static String DB_PASSWORD = "___";//Replace ___ by ur password
+    private final static String DB_USER = "root";//Replace ___ by ur user
+    private final static String DB_PASSWORD = "Alexia2018";//Replace ___ by ur password
 
 
     public static School selectById(int id) {
@@ -114,6 +114,27 @@ public class SchoolRepository {
             statement.setInt(2, capacity);
             statement.setString(3, country);
             statement.setInt(4, id);
+
+            return statement.executeUpdate();
+        }
+        catch (SQLException e) {
+            throw new ResponseStatusException(
+                    HttpStatus.INTERNAL_SERVER_ERROR, "", e
+            );
+        }
+    }
+
+    public static int delete(int id) {
+
+        try(
+                Connection connection = DriverManager.getConnection(
+                        DB_URL, DB_USER, DB_PASSWORD
+                );
+                PreparedStatement statement = connection.prepareStatement(
+                        "DELETE FROM school WHERE id=?"
+                );
+            ) {
+            statement.setInt(1, id);
 
             return statement.executeUpdate();
         }
