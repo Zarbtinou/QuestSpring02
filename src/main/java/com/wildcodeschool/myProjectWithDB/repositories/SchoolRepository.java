@@ -13,7 +13,7 @@ public class SchoolRepository {
 
     private final static String DB_URL = "jdbc:mysql://localhost:3306/wild_db_quest?serverTimezone=GMT";
     private final static String DB_USER = "root";//Replace ___ by ur user
-    private final static String DB_PASSWORD = "Alexia2018";//Replace ___ by ur password
+    private final static String DB_PASSWORD = "___";//Replace ___ by ur password
 
 
     public static School selectById(int id) {
